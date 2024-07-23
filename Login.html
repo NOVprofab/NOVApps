@@ -63,11 +63,20 @@ License: For each use you must have a valid license purchased only from above li
                 window.top.location.replace(window.self.location.href);
             }
         </script>
-		<style>
-			.rounded-4 {
-				border-radius: 1rem !important;
-			}
-		</style>
+	<style>
+		.rounded-4 {
+			border-radius: 1rem !important;
+		}
+		.app-button {
+		  display: none;
+		}
+		
+		@media (display-mode: standalone) {
+		  .app-button {
+		    display: block;
+		  }
+		}
+	</style>
     </head>
     <!--end::Head-->
 
@@ -253,6 +262,9 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Javascript-->
 		<script>
 			var hostUrl = "https://preview.keenthemes.com/metronic8/demo1/assets/";
+			function isStandaloneApp() {
+			  return window.matchMedia("(display-mode: standalone)").matches;
+			}
 		</script>
 	
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
