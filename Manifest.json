@@ -1,9 +1,9 @@
 {
   "name": "NOV_Profab",
   "short_name": "NOV_Profab",
-  "start_url": ".",
   "display": "standalone",
-  "background_color": "#fff",
+  "theme_color": "#0c94cc",
+  "background_color": "#0c94cc",
   "description": "NOV Profab app.",
   "icons": [
     {
@@ -32,10 +32,5 @@
       "type": "image/png"
     },
   ],
-  "related_applications": [
-    {
-      "platform": "play",
-      "url": "https://novprofab.github.io/NOVApps/Login.html"
-    }
-  ]
+  "start_url": "https://novprofab.github.io/NOVApps/Login.html"
 }
