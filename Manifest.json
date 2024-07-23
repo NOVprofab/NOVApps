@@ -7,27 +7,27 @@
   "description": "NOV Profab app.",
   "icons": [
     {
-      "src": "https://novprofab.github.io/NOVApps/assets/media/books/1.png",
+      "src": "assets/media/books/1.png",
       "sizes": "48x48",
       "type": "image/png"
     },
     {
-      "src": "https://novprofab.github.io/NOVApps/assets/media/books/2.png",
+      "src": "assets/media/books/2.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "https://novprofab.github.io/NOVApps/assets/media/books/3.png",
+      "src": "assets/media/books/3.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "https://novprofab.github.io/NOVApps/assets/media/books/4.png",
+      "src": "assets/media/books/4.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "https://novprofab.github.io/NOVApps/assets/media/books/5.png",
+      "src": "assets/media/books/5.png",
       "sizes": "168x168",
       "type": "image/png"
     },
