@@ -53,7 +53,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Form-->
 					<div class="d-flex flex-center flex-column flex-lg-row-fluid">
 						<!--begin::Wrapper-->
-						<div class="w-lg-500px p-10">
+						<div id="SignIn" class="w-lg-500px p-10">
 	
 							<!--begin::Form-->
 							<form class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework">
@@ -79,32 +79,32 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="row">
 									<div class="col-lg-12 mb-3">
 										<!--begin::Email-->
-										<input type="text" placeholder="Email / Badge Id" name="email" autocomplete="off" class="form-control bg-transparent">
+										<input type="text" placeholder="Email / Badge Id" id="txtUser" autocomplete="off" class="form-control bg-transparent">
 										<!--end::Email-->
-										<div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+										<div id="errtxtUser" class="fv-plugins-message-container invalid-feedback" hidden="hidden">
+											<span>Please Input User or Email</span>
+										</div>
 									</div>
 									<!--end::Input group--->
 									<div class="col-lg-12">
 										<!--begin::Password-->
-										<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control bg-transparent">
+										<input type="password" placeholder="Password" id="txtPassword" autocomplete="off" class="form-control bg-transparent">
 										<!--end::Password-->
-										<div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+										<div id="errtxtPassword" class="fv-plugins-message-container invalid-feedback" hidden="hidden">
+											<span>The password is required</span>
+										</div>
 									</div>
 									<!--end::Input group--->
 								</div>
 							
 	
 								<!--begin::Input group--->
-								
-	
-
-	
 								<!--begin::Wrapper-->
 								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
 									<div></div>
 	
 									<!--begin::Link-->
-									<a href="https://novprofab.github.io/NOVApps/authentication/layouts/corporate/reset-password.html" class="link-primary">
+									<a href="#" onclick="Login.ForgotPasswordForm()" class="link-primary">
 										Forgot Password ?
 									</a>
 									<!--end::Link-->
@@ -113,18 +113,7 @@ License: For each use you must have a valid license purchased only from above li
 	
 								<!--begin::Submit button-->
 								<div class="d-grid mb-10">
-									<button type="submit"  class="btn btn-danger">
-	
-										<!--begin::Indicator label-->
-										<span class="indicator-label">
-											Sign In</span>
-										<!--end::Indicator label-->
-	
-										<!--begin::Indicator progress-->
-										<span class="indicator-progress">
-											Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-										</span>
-										<!--end::Indicator progress--> </button>
+									<button type="submit" id="btnSubmit"  class="btn btn-danger">Sign In</button>
 								</div>
 								<!--end::Submit button-->
 	
@@ -132,15 +121,107 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="text-gray-500 text-center fw-semibold fs-6">
 									Not a Member yet?
 	
-									<a href="https://novprofab.github.io/NOVApps/authentication/layouts/corporate/sign-up.html" class="link-primary">
-										Sign up
-									</a>
+									<a href="#" class="link-primary" onclick="Login.SignUpForm()">Sign up</a>
 								</div>
 								<!--end::Sign up-->
 							</form>
 							<!--end::Form-->
 						</div>
 						<!--end::Wrapper-->
+
+						<div id="ForgotPassword" class="w-lg-500px p-10" hidden="hidden">
+							<!--begin::Form-->
+							<form class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework">
+								<!--begin::Heading-->
+								<div class="text-center mb-10">
+									<!--begin::Title-->
+									<h1 class="text-gray-900 fw-bolder mb-3">
+										Forgot Password ?
+									</h1>
+									<!--end::Title-->
+							
+									<!--begin::Link-->
+									<div class="text-gray-500 fw-semibold fs-6">
+										Enter your Badge Id and email to reset your password.
+									</div>
+									<!--end::Link-->
+								</div>
+								<!--begin::Heading-->
+							
+								<!--begin::Input group--->
+								<div class="fv-row mb-8 fv-plugins-icon-container">
+									<!--begin::Email-->
+									<input type="text" placeholder="BadgeId"  autocomplete="off" class="form-control bg-transparent"> 
+									<!--end::Email-->
+								
+								</div>
+								<div class="fv-row mb-8 fv-plugins-icon-container">
+										<!--begin::Email-->
+										<input type="text" placeholder="Email"  autocomplete="off" class="form-control bg-transparent"> 
+										<!--end::Email-->
+									
+								</div>
+							
+								<!--begin::Actions-->
+								<div class="d-flex flex-wrap justify-content-center pb-lg-0">
+									<button type="button"  class="btn btn-primary me-4">Submit </button>
+									<button class="btn btn-light" onclick="Login.SignInForm()">Cancel</button>
+								</div>
+								<!--end::Actions-->
+							</form>
+							<!--end::Form-->
+						</div>
+
+						<div id="SignUp" class="w-lg-500px p-10" hidden="hidden">
+							<!--begin::Form-->
+							<form class="form w-100 fv-plugins-bootstrap5 fv-plugins-framework">
+								<!--begin::Heading-->
+								<div class="text-center mb-10">
+									<!--begin::Title-->
+									<h1 class="text-gray-900 fw-bolder mb-3">
+										Sign Up
+									</h1>
+									<!--end::Title-->
+							
+									<!--begin::Link-->
+									<div class="text-gray-500 fw-semibold fs-6">
+										Enter your Badge Id and email to register.
+									</div>
+									<!--end::Link-->
+								</div>
+								<!--begin::Heading-->
+								<div class="row mb-10">
+									<div class="col-lg-12 mb-3">
+										<!--begin::Email-->
+										<input type="text" placeholder="Badge Id" id="txtbadgeIdSignUp"  autocomplete="off" class="form-control bg-transparent"> 
+										<!--end::Email-->
+										<div id="errtxtbadgeIdSignUp" class="fv-plugins-message-container invalid-feedback" hidden="hidden">
+											<span>Please Input Badge Id</span>
+										</div>
+									</div>
+									<!--end::Input group--->
+									<div class="col-lg-12">
+										<!--begin::Password-->
+										<input type="text" placeholder="Email" id="txtEmail"  autocomplete="off" class="form-control bg-transparent"> 
+										<!--end::Password-->
+										<div id="errtxtEmail" class="fv-plugins-message-container invalid-feedback" hidden="hidden">
+											<span>Email is required</span>
+										</div>
+									</div>
+									<!--end::Input group--->
+								</div>
+								<!--begin::Input group--->
+								
+							
+								<!--begin::Actions-->
+								<div class="d-flex flex-wrap justify-content-center pb-lg-0">
+									<button type="button"  class="btn btn-primary me-4">Submit </button>
+									<button class="btn btn-light" onclick="Login.SignInForm()">Cancel</button>
+								</div>
+								<!--end::Actions-->
+							</form>
+							<!--end::Form-->
+						</div>
 					</div>
 					<!--end::Form-->
 	
@@ -203,7 +284,96 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="https://novprofab.github.io/NOVApps/assets/js/custom/authentication/sign-in/general.js"></script>
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
-	
+		<script>
+			
+			
+			var target = document.querySelector("#kt_body");
+        	var blockUI = new KTBlockUI(target);
+
+			
+			function Login() { }
+			$('#btnSubmit').on('click', function (e) {
+				e.preventDefault();
+
+				Login.Submit()
+
+			});
+
+			Login.Submit = function () {
+            var UserName = document.getElementById('txtUser').value
+            var Password = document.getElementById('txtPassword').value
+
+            var IsPass = 1
+
+            if (UserName == '') {
+                $('#errtxtUser').removeAttr('hidden')
+                IsPass = 0
+            }
+            else {
+                $('#errtxtUser').attr('hidden', 'hidden')
+                IsPass = 1
+            }
+
+
+            if (Password == '') {
+                $('#errtxtPassword').removeAttr('hidden')
+                IsPass = 0
+            }
+            else {
+                $('#errtxtPassword').attr('hidden', 'hidden')
+                IsPass = 1
+            }
+
+            if (IsPass == 1) {
+
+				toastr.success("welcome to Observation system");
+
+                //  blockUI.block();
+                // $.ajax({
+                //     url: '../Login/GetLogin',
+                //     method: "POST",
+                //     dataType: "JSON",
+                //     data: {
+                //         UserName: UserName,
+                //         Password: Password
+                //     },
+                //     success: function (j) {
+                //         if (j.Result == true) {
+                //             blockUI.release();
+                //             console.log(j.Data[0])
+                //             IsManager = j.Data[0]
+                //             Login.GetMenu()
+                            
+                            	window.location.href = 'https://script.google.com/macros/s/AKfycbxf__JJaQmHQ2keUXH_iCoLFWAWYnmyAm4L90kw5wCQELKmmPHb_oL1T9Yf5DkXKqc/exec?BadgeId='+UserName+'';
+                //         }
+                //         else {
+                //             toastr.error(j.Msg);
+                //             $('#txtPassword').select()
+                //             blockUI.release();
+                //         }
+                //     },
+                //     error: function (xhr, error, text) {
+                //         toastr.error(error);
+                //     }
+                // });
+
+            }
+        }
+
+			Login.ForgotPasswordForm =function(){
+				$('#SignIn').attr('hidden','hidden')
+				$('#ForgotPassword').removeAttr('hidden')
+			}
+			Login.SignUpForm =function(){
+				$('#SignIn').attr('hidden','hidden')
+				$('#SignUp').removeAttr('hidden')
+			}
+			Login.SignInForm =function(){
+				$('#SignIn').removeAttr('hidden')
+				$('#ForgotPassword').attr('hidden','hidden')
+				$('#SignUp').attr('hidden','hidden')
+			}
+		</script>
 	
 	</body>
     <!--end::Body-->
